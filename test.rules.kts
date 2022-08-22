@@ -5,7 +5,7 @@
 fun PackageRule.LicenseRule.isMIT() =
     object : RuleMatcher {
         override val description = "isMIT($license)"
-        override fun matches() = (license.lowercase() == "mit")
+        override fun matches() = (license.toString().lowercase() == "mit")
     }
 
 fun RuleSet.noMITRule() = packageRule("NO_MIT") {
