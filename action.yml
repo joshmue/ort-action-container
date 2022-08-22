@@ -1,0 +1,17 @@
+name: 'ORT Review'
+description: 'Run an ORT review on code'
+inputs:
+  repository:
+    required: false
+    description: 'Git clone ref'
+  script:
+    required: true
+    description: 'script to execute'
+
+runs:
+  using: docker
+  image: docker://ghcr.io/sovereigncloudstack/ort:main
+  entrypoint: 'bash'
+  args:
+  - -c
+  - "${{ inputs.script }}"
