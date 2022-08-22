@@ -14,4 +14,6 @@ runs:
   entrypoint: 'bash'
   args:
   - -c
-  - "${{ inputs.script }}"
+  - |
+      export PATH=$PATH:/opt/ort/bin
+      ${{ inputs.script }}
