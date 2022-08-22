@@ -19,4 +19,5 @@ runs:
       mkdir -p $PWD/data_dir/.ort
       export ORT_DATA_DIR=$PWD/data_dir/.ort
       export GOPATH=$PWD/data_dir/go
+      git config --global --add safe.directory $GITHUB_WORKSPACE
       ${{ inputs.script }}
