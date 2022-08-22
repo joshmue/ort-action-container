@@ -16,4 +16,8 @@ runs:
   - -c
   - |
       export PATH=$PATH:/opt/ort/bin
+      mkdir -p $PWD/data_dir/.ort
+      export ORT_DATA_DIR=$PWD/data_dir/.ort
+      export JAVA_HOME=$PWD/data_dir/java
+      export GOPATH=$PWD/data_dir/go
       ${{ inputs.script }}
